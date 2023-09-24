@@ -1,6 +1,4 @@
-import { useEffect, useState } from "react";
 import { useQuery, useMutation } from "@tanstack/react-query";
-import mockdata from "./lib/mockdata.json";
 import axios from "axios";
 import {
   Header,
@@ -16,7 +14,7 @@ import {
 console.clear();
 
 function App() {
-  const { isLoading, data, error } = useQuery({
+  const { isLoading, data, isError } = useQuery({
     queryKey: ["mockData"],
     queryFn: () => {
       return axios({
@@ -37,52 +35,6 @@ function App() {
   if (isLoading) {
     return <div>is Loading</div>;
   }
-
-  // const mock = [
-  //   {
-  //     id: "1",
-  //     title: "The Secret Garden",
-  //     author: "Eleanor Green",
-  //     tags: ["gardening", "mystery", "magic"],
-  //   },
-  //   {
-  //     id: "2",
-  //     title: "Lost in Time",
-  //     author: "Samuel Turner",
-  //     tags: ["time travel", "adventure", "historical"],
-  //   },
-  // ];
-
-  // const postsQuery = useQuery({
-  //   queryKey: ["mockdata"],
-  //   queryFn: () => wait(1000).then(() => [...mock]),
-  // });
-
-  // if (postsQuery.isLoading) return <h1>is loading...</h1>;
-  // if (postsQuery.isError)
-  //   return <pre>{JSON.stringify(postsQuery.isError)}</pre>;
-
-  // const wait = (duration) => {
-  //   return new Promise((resolve) => setTimeout(resolve, duration));
-  // };
-
-  // axios({
-  //   method: "get",
-  //   url: "https://rickandmortyapi.com/api/location",
-  //   responseType: "json",
-  // }).then((res) => {
-  //   const names = res.data.results;
-  //   console.log(names.names);
-  // });
-
-  // useEffect(() => {
-  //   try {
-  //     fetchPics();
-  //     console.log(img.data?.links?.http);
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // }, []);
 
   return (
     <>
