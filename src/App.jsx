@@ -1,5 +1,3 @@
-import { useQuery, useMutation } from "@tanstack/react-query";
-import axios from "axios";
 import {
   Header,
   MainContent,
@@ -10,25 +8,12 @@ import {
   StyledLI,
   StyledImg,
 } from "./globalStyles";
+import useFetchPhotos from "./hooks/useFetchPhotos";
 
 console.clear();
 
 function App() {
-  const { isLoading, data, isError } = useQuery({
-    queryKey: ["mockData"],
-    queryFn: () => {
-      return axios({
-        method: "get",
-        url: "https://api.unsplash.com/photos?page=1",
-        headers: {
-          Authorization: `Client-ID ${
-            import.meta.env.VITE_Unsplash_ACCESS_KEY
-          }`,
-        },
-        responseType: "json",
-      });
-    },
-  });
+  const { isLoading, data, isError } = useFetchPhotos();
 
   console.log(data?.data);
 
