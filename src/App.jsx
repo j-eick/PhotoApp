@@ -10,6 +10,7 @@ import {
   InputField,
   StyledUL,
   StyledLI,
+  StyledImg,
 } from "./globalStyles";
 
 console.clear();
@@ -96,19 +97,9 @@ function App() {
         <StyledUL>
           {data.data.map((e) => (
             <StyledLI key={e.id}>
-              <div>{e.id}</div>
-              <img src={e.urls?.thumb} alt="" />
+              <StyledImg src={e.urls?.thumb} alt="" />
             </StyledLI>
           ))}
-          {/* {postsQuery.data.map((data) => (
-            <StyledLI key={data.id}>
-              <ul>
-                <li>{data.title}</li>
-                <li>{data.author}</li>
-                <li>{data.tags}</li>
-              </ul>
-            </StyledLI>
-          ))} */}
         </StyledUL>
       </MainContent>
       <Footer>Footer</Footer>

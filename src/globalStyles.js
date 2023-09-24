@@ -19,9 +19,6 @@ export const Header = styled.header`
   background-color: lightcoral;
 `;
 export const MainContent = styled.main`
-  height: 70vh;
-  width: 100vw;
-
   background-color: lightcyan;
 `;
 export const Footer = styled.footer`
@@ -40,19 +37,29 @@ export const SearchButton = styled.button`
   border-bottom-left-radius: 0px;
 `;
 export const StyledUL = styled.ul`
-  padding: 20px;
+  padding: 30px;
   height: 100%;
 
-  display: flex;
-  flex-wrap: wrap;
-  gap: 7px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  /* grid-template-columns: repeat(auto-fill, minmax(auto, 1fr)); */
+
+  /* justify-content: center;
+  flex-wrap: wrap; */
+  gap: 20px;
 
   background-color: cyan;
 `;
 export const StyledLI = styled.li`
-  /* display: flex; */
+  display: grid;
+  place-items: center;
 
-  background-color: lightgoldenrodyellow;
+  /* border: 1px solid black; */
+`;
+export const StyledImg = styled.img`
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
 `;
 
 export default GlobalStyle;
