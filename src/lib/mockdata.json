@@ -1,0 +1,74 @@
+[
+  {
+    "id": "1",
+    "title": "The Secret Garden",
+    "author": "Eleanor Green",
+    "tags": ["gardening", "mystery", "magic"]
+  },
+  {
+    "id": "2",
+    "title": "Lost in Time",
+    "author": "Samuel Turner",
+    "tags": ["time travel", "adventure", "historical"]
+  },
+  {
+    "id": "3",
+    "title": "Moonlight Sonata",
+    "author": "Isabella Martinez",
+    "tags": ["music", "romance", "moonlight"]
+  },
+  {
+    "id": "4",
+    "title": "The Enchanted Forest",
+    "author": "Oliver Smith",
+    "tags": ["fantasy", "nature", "mystery"]
+  },
+  {
+    "id": "5",
+    "title": "Echoes of Eternity",
+    "author": "Sophia Anderson",
+    "tags": ["time", "love", "destiny"]
+  },
+  {
+    "id": "6",
+    "title": "Starship Odyssey",
+    "author": "Xander Reynolds",
+    "tags": ["space", "adventure", "science fiction"]
+  },
+  {
+    "id": "7",
+    "title": "The Art of Deception",
+    "author": "Vivian Black",
+    "tags": ["art", "crime", "thriller"]
+  },
+  {
+    "id": "8",
+    "title": "The Serpent's Curse",
+    "author": "Liam Parker",
+    "tags": ["adventure", "mystery", "ancient history"]
+  },
+  {
+    "id": "9",
+    "title": "Summer Breeze",
+    "author": "Ava Johnson",
+    "tags": ["summer", "romance", "beach"]
+  },
+  {
+    "id": "10",
+    "title": "The Lost City",
+    "author": "Lucas Carter",
+    "tags": ["adventure", "exploration", "archaeology"]
+  },
+  {
+    "id": "11",
+    "title": "Whispers in the Wind",
+    "author": "Emma Turner",
+    "tags": ["mystery", "nature", "whispers"]
+  },
+  {
+    "id": "12",
+    "title": "The Timeless Key",
+    "author": "Natalie White",
+    "tags": ["time travel", "mystery", "unlocking"]
+  }
+]
