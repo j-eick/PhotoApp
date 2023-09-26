@@ -40,12 +40,11 @@ export const StyledUL = styled.ul`
   padding: 30px;
   height: 100%;
 
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
+  /* flex-direction: row;
+  grid-template-columns: 1fr 1fr 1fr; */
   /* grid-template-columns: repeat(auto-fill, minmax(auto, 1fr)); */
-
-  /* justify-content: center;
-  flex-wrap: wrap; */
   gap: 20px;
 
   background-color: cyan;
@@ -53,8 +52,9 @@ export const StyledUL = styled.ul`
 export const StyledLI = styled.li`
   display: grid;
   place-items: center;
+  flex-grow: 1;
 
-  /* border: 1px solid black; */
+  border: 1px solid black;
 `;
 export const StyledImg = styled.img`
   max-width: 100%;
