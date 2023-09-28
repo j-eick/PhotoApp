@@ -8,7 +8,14 @@ const GlobalStyle = createGlobalStyle`
       font-family: 'Montserrat', sans-serif;
       list-style: none;
   }
+`;
 
+export const StyledDialog = styled.dialog`
+  transform: translate(0, -50%);
+  top: 50%;
+  margin: 0 auto;
+
+  border: none;
 `;
 
 export const Header = styled.header`
@@ -42,9 +49,7 @@ export const StyledUL = styled.ul`
 
   display: flex;
   flex-wrap: wrap;
-  /* flex-direction: row;
-  grid-template-columns: 1fr 1fr 1fr; */
-  /* grid-template-columns: repeat(auto-fill, minmax(auto, 1fr)); */
+  justify-content: space-evenly;
   gap: 20px;
 
   background-color: cyan;
@@ -53,13 +58,15 @@ export const StyledLI = styled.li`
   display: grid;
   place-items: center;
   flex-grow: 1;
-
-  border: 1px solid black;
 `;
 export const StyledImg = styled.img`
-  max-width: 100%;
-  height: auto;
   object-fit: cover;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
+
+export const CloseDialogButton = styled.button``;
 
 export default GlobalStyle;
