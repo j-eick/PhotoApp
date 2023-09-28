@@ -80,6 +80,7 @@ const FetchedImages = () => {
       e.clientY > dialogWindow.bottom
     ) {
       dialogModal.current.close();
+      setSelectedPic("");
     }
   };
 
