@@ -1,6 +1,10 @@
 import { createGlobalStyle, styled } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
+:root{
+  --fontsize_CloseButton_PreviewModal: 1.5 em;
+}
+
   * {
       box-sizing: border-box;
       padding: 0%;
@@ -10,12 +14,33 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-export const StyledDialog = styled.dialog`
-  transform: translate(0, -50%);
-  top: 50%;
-  margin: 0 auto;
+export const StyledModal = styled.div`
+  position: absolute;
+  top: 120px;
+`;
+export const ModalBackdrop = styled.div`
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background: rgba(240, 240, 240, 0.744);
+  backdrop-filter: blur(10px);
 
-  border: none;
+  height: 100%;
+  width: 100vw;
+`;
+export const CloseModal_Button = styled.button`
+  position: absolute;
+  top: -26.5px;
+  right: 0px;
+
+  padding: 5px 20px;
+  border: 1px solid black;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+
+  font-size: var(--fontsize_CloseButton_PreviewModal);
 `;
 
 export const Header = styled.header`
@@ -47,7 +72,9 @@ export const StyledUL = styled.ul`
   padding: 30px;
   height: 100%;
 
+  position: relative;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   justify-content: space-evenly;
   gap: 20px;
