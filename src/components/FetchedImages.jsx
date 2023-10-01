@@ -14,9 +14,9 @@ import { useState, useEffect } from "react";
 console.clear();
 
 const FetchedImages = () => {
-  const [picArray, setPicArray] = useState();
-  const [selectedPic, setSelectedPic] = useState("");
+  const [defaultPicArray, setDefaultPicArray] = useState();
   const [pageNumber, setPageNumber] = useState(1);
+  const [selectedPic, setSelectedPic] = useState("");
   const [showPreviewModal, setShowPreviewModal] = useState(false);
 
   const { isLoading, data, isError } = useQuery({
@@ -36,17 +36,17 @@ const FetchedImages = () => {
   });
 
   useEffect(() => {
-    setPicArray(data);
+    setDefaultPicArray(data);
   }, [data]);
 
   // console.log(data?.data);
   // console.log(pageNumber);
 
   // console.log("pics data:");
-  console.log(picArray);
+  console.log(defaultPicArray);
 
   // console.log("pics array:");
-  // console.log(picArray?.data);
+  // console.log(defaultPicArray?.data);
 
   /**
    * Compares the altdescription of clicked img and finds the img
@@ -58,7 +58,7 @@ const FetchedImages = () => {
   const handleClickPreview = (event) => {
     // compare clicked img.alt_descriptions
     const clickedPic = event.target;
-    picArray.data.forEach((loopedPic) => {
+    defaultPicArray.data.forEach((loopedPic) => {
       if (loopedPic.alt_description === clickedPic.alt) {
         setSelectedPic(loopedPic.urls.small);
       }
