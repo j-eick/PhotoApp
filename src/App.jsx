@@ -1,5 +1,3 @@
-import { useState } from "react";
-import FetchedImages from "./components/FetchedImages";
 import {
   Header,
   MainContent,
@@ -7,10 +5,18 @@ import {
   SearchButton,
   InputField,
 } from "./globalStyles";
+import useFetchPhotos from "./hooks/useFetchPhotos";
 
 console.clear();
 
 function App() {
+  const { response, isLoading, isError, fetchData } = useFetchPhotos(
+    `search/photos?page=1&query=office&client_id=${
+      import.meta.VITE_Unsplash_ACCESS_KEY
+    }`
+  );
+  console.log(response);
+
   return (
     <>
       <Header>
@@ -20,9 +26,7 @@ function App() {
           <SearchButton>looky looky</SearchButton>
         </div>
       </Header>
-      <MainContent>
-        <FetchedImages />
-      </MainContent>
+      <MainContent>{/* <FetchedImages /> */}</MainContent>
       <Footer>Footer</Footer>
     </>
   );
