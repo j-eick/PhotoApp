@@ -60,7 +60,7 @@ export const Footer = styled.footer`
 
   background-color: burlywood;
 `;
-export const InputField = styled.input`
+export const StyledInput = styled.input`
   border-top-right-radius: 0px;
   border-bottom-right-radius: 0px;
 `;

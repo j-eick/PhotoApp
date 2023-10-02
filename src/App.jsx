@@ -1,13 +1,12 @@
-import {
-  Header,
-  MainContent,
-  Footer,
-  SearchButton,
-  InputField,
-} from "./globalStyles";
+import { createContext } from "react";
+import { Header, MainContent, Footer } from "./globalStyles";
 import useFetchPhotos from "./hooks/useFetchPhotos";
+import ImageList from "./components/ImageList";
+import InputSearch from "./components/InputSearch";
 
 console.clear();
+
+export const ImageContext = createContext();
 
 function App() {
   const { response, isLoading, isError, fetchData } = useFetchPhotos(
@@ -15,21 +14,27 @@ function App() {
       import.meta.env.VITE_Unsplash_ACCESS_KEY
     }`
   );
+
   console.log(response);
-  console.log(fetchData);
+
+  const value = {
+    response,
+    isLoading,
+    isError,
+    fetchData,
+  };
 
   return (
-    <>
+    <ImageContext.Provider value={value}>
       <Header>
         <h1>PhotoApp</h1>
-        <div>
-          <InputField type="search" />
-          <SearchButton>looky looky</SearchButton>
-        </div>
+        <InputSearch />
       </Header>
-      <MainContent>{/* <FetchedImages /> */}</MainContent>
+      <MainContent>
+        <ImageList />
+      </MainContent>
       <Footer>Footer</Footer>
-    </>
+    </ImageContext.Provider>
   );
 }
 
