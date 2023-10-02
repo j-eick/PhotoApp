@@ -25,9 +25,11 @@ const ImageList = () => {
           <Skeleton item={10} />
         ) : (
           response.map((data, key) => (
-            <StyledLI key={key}>
-              <Image data={data} onClick={() => setIsModalOpen(true)} />
-            </StyledLI>
+            <>
+              <StyledLI key={key}>
+                <Image data={data} onClick={() => setIsModalOpen(true)} />
+              </StyledLI>
+            </>
           ))
         )}
       </StyledUL>

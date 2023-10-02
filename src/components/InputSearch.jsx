@@ -1,6 +1,7 @@
 import { ImageContext } from "../App";
 import { SearchButton, StyledInput } from "../globalStyles/";
 import { useContext, useState } from "react";
+import styled from "styled-components";
 
 const InputSearch = () => {
   const [searchValue, setSearchValue] = useState("");
@@ -16,7 +17,7 @@ const InputSearch = () => {
   };
 
   const handleEnterSearch = (e) => {
-    if (e.key == "Enter") {
+    if (e.key == "Enter" && searchValue != "") {
       fetchData(
         `search/photos?page=1&query=${searchValue}&client_id=${
           import.meta.env.VITE_Unsplash_ACCESS_KEY
@@ -27,8 +28,7 @@ const InputSearch = () => {
   };
 
   return (
-    <>
-      <label htmlFor="search">What are you looking for?</label>
+    <StyledWrapper>
       <StyledInput
         type="search"
         name="search"
@@ -42,10 +42,20 @@ const InputSearch = () => {
         disabled={!searchValue}
         onClick={handleButtonSearch}
       >
-        looky looky
+        look!
       </SearchButton>
-    </>
+    </StyledWrapper>
   );
 };
 
 export default InputSearch;
+
+const StyledWrapper = styled.div`
+  width: 40%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 10px;
+`;
