@@ -12,10 +12,11 @@ console.clear();
 function App() {
   const { response, isLoading, isError, fetchData } = useFetchPhotos(
     `search/photos?page=1&query=office&client_id=${
-      import.meta.VITE_Unsplash_ACCESS_KEY
+      import.meta.env.VITE_Unsplash_ACCESS_KEY
     }`
   );
   console.log(response);
+  console.log(fetchData);
 
   return (
     <>
