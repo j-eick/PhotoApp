@@ -8,7 +8,6 @@ import {
 import { useState, useContext } from "react";
 import { ImageContext } from "../App";
 import Image from "./Image";
-import Skeleton from "./Skeleton";
 import PreviewModal from "./PreviewModal";
 
 console.clear();
@@ -21,17 +20,11 @@ const ImageList = () => {
     <>
       <StyledUL>
         {isModalOpen && <PreviewModal />}
-        {isLoading ? (
-          <Skeleton item={10} />
-        ) : (
-          response.map((data, key) => (
-            <>
-              <StyledLI key={key}>
-                <Image data={data} onClick={() => setIsModalOpen(true)} />
-              </StyledLI>
-            </>
-          ))
-        )}
+        {response.map((data, id) => (
+          <StyledLI key={id}>
+            <Image data={data} onClick={() => setIsModalOpen(true)} />
+          </StyledLI>
+        ))}
       </StyledUL>
     </>
   );

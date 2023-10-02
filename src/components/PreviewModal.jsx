@@ -1,7 +1,11 @@
 import styled from "styled-components";
 
-const PreviewModal = ({ children }) => {
-  return <StyledPreviewModal>{children}</StyledPreviewModal>;
+const PreviewModal = () => {
+  return (
+    <StyledPreviewModal>
+      <img src="" alt="" />
+    </StyledPreviewModal>
+  );
 };
 
 export default PreviewModal;

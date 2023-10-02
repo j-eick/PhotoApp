@@ -155,7 +155,7 @@ export const SearchButton = styled.button`
 `;
 export const StyledUL = styled.ul`
   padding: 30px;
-  /* height: 100%; */
+  min-height: 70vh;
 
   position: relative;
   display: flex;

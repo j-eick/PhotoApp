@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { StyledImg } from "../globalStyles";
 
 const Image = ({ data, onClick }) => {

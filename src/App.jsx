@@ -3,8 +3,6 @@ import { Heading, Footer } from "./globalStyles";
 import useFetchPhotos from "./hooks/useFetchPhotos";
 import ImageList from "./components/ImageList";
 import InputSearch from "./components/InputSearch";
-import Main from "./components/Main";
-import PreviewModal from "./components/PreviewModal";
 
 console.clear();
 
@@ -34,10 +32,9 @@ function App() {
         <h1>What are you looking for?</h1>
         <InputSearch />
       </Heading>
-      <Main>
-        {isPreviewModal && <PreviewModal />}
-        <ImageList />
-      </Main>
+
+      <ImageList />
+
       <Footer>Footer</Footer>
     </ImageContext.Provider>
   );
