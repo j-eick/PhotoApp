@@ -3,7 +3,7 @@ import keyframes from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 :root{
-  --fontsize_CloseButton_PreviewModal: 1.5 em;
+  --fontsize_CloseButton_PreviewModal: 1.75em;
 }
 
   * {
@@ -29,21 +29,10 @@ export const ModalBackdrop = styled.div`
   height: 100%;
   width: 100vw;
 `;
-export const CloseModal_Button = styled.button`
-  position: absolute;
-  top: -26.5px;
-  right: 0px;
 
-  padding: 5px 20px;
-  border: 1px solid black;
-  border-bottom-left-radius: 0px;
-  border-bottom-right-radius: 0px;
-  border-top-right-radius: 5px;
-  border-top-left-radius: 5px;
-
-  font-size: var(--fontsize_CloseButton_PreviewModal);
-`;
-
+/*********************************************************
+ * HEADING, MAIN, Footer
+ */
 export const Heading = styled.header`
   height: 20vh;
   display: grid;
@@ -54,7 +43,9 @@ export const Heading = styled.header`
 export const StyledMain = styled.main`
   min-height: 70vh;
 
-  background-color: #5885af;
+  margin: 2px 0;
+
+  background-color: #3677b3;
 `;
 export const Footer = styled.footer`
   height: 10vh;
@@ -63,6 +54,10 @@ export const Footer = styled.footer`
 
   background-color: #41729f;
 `;
+
+/*********************************************************
+ * INPUTs, BUTTONS
+ */
 export const StyledInput = styled.input`
   height: 3.5em;
   width: 60%;
@@ -147,15 +142,30 @@ export const SearchButton = styled.button`
     top: 0;
     border-radius: 10px;
   }
-
-  /* border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-  border-top-left-radius: 0px;
-  border-bottom-left-radius: 0px; */
 `;
+
+export const Styled_CloseModal_Button = styled.button`
+  position: absolute;
+  top: 50px;
+  right: 50px;
+
+  border: none;
+  background: none;
+
+  padding: 5px 20px;
+
+  font-size: var(--fontsize_CloseButton_PreviewModal);
+
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
+/*********************************************************
+ * LISTS
+ */
 export const StyledUL = styled.ul`
-  padding: 30px;
-  min-height: 70vh;
+  padding: 50px;
 
   position: relative;
   display: flex;
@@ -170,13 +180,18 @@ export const StyledLI = styled.li`
   flex-grow: 1;
 `;
 export const StyledImg = styled.img`
+  border-radius: 15px;
   object-fit: cover;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
   &:hover {
     cursor: pointer;
   }
 `;
-
-export const CloseDialogButton = styled.button``;
+export const StyledImg_Modal = styled.img`
+  object-fit: cover;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+`;
 
 export default GlobalStyle;

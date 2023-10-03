@@ -4,7 +4,7 @@ const Image = ({ data, onClick }) => {
   return (
     <StyledImg
       src={data.urls.thumb}
-      alt="data.alt_description"
+      alt={data.alt_description}
       onClick={onClick}
     />
   );

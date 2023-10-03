@@ -3,6 +3,7 @@ import { Heading, Footer } from "./globalStyles";
 import useFetchPhotos from "./hooks/useFetchPhotos";
 import ImageList from "./components/ImageList";
 import InputSearch from "./components/InputSearch";
+import Main from "./components/Main";
 
 console.clear();
 
@@ -32,9 +33,9 @@ function App() {
         <h1>What are you looking for?</h1>
         <InputSearch />
       </Heading>
-
-      <ImageList />
-
+      <Main>
+        <ImageList />
+      </Main>
       <Footer>Footer</Footer>
     </ImageContext.Provider>
   );
