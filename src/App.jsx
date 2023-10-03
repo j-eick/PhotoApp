@@ -1,17 +1,17 @@
-import { createContext, useState } from "react";
-import { Heading, Footer } from "./globalStyles";
+import { createContext } from "react";
+import { Heading } from "./globalStyles";
 import useFetchPhotos from "./hooks/useFetchPhotos";
 import ImageList from "./components/ImageList";
 import InputSearch from "./components/InputSearch";
 import Main from "./components/Main";
+import Footing from "./components/Footing";
+import { StyledH1 } from "./globalStyles";
 
 console.clear();
 
 export const ImageContext = createContext();
 
 function App() {
-  const [isPreviewModal, setIsPreviewModal] = useState(false);
-
   const { response, isLoading, isError, fetchData } = useFetchPhotos(
     `search/photos?page=1&query=office&client_id=${
       import.meta.env.VITE_Unsplash_ACCESS_KEY
@@ -30,13 +30,13 @@ function App() {
   return (
     <ImageContext.Provider value={value}>
       <Heading>
-        <h1>What are you looking for?</h1>
+        <StyledH1>Find your image</StyledH1>
         <InputSearch />
       </Heading>
       <Main>
         <ImageList />
       </Main>
-      <Footer>Footer</Footer>
+      <Footing />
     </ImageContext.Provider>
   );
 }
