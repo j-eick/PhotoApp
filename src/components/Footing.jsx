@@ -7,7 +7,8 @@ const Footing = () => {
   return (
     <Footer>
       <Footer_Container>
-        <PiCopyright /> {year}
+        <PiCopyright />
+        {year}
       </Footer_Container>
     </Footer>
   );
