@@ -1,13 +1,11 @@
 import { createContext } from "react";
-import { Heading } from "./globalStyles";
+import Heading from "./components/Heading/Heading";
 import useFetchPhotos from "./hooks/useFetchPhotos";
 import ImageList from "./components/ImageList";
-import InputSearch from "./components/InputSearch";
+import InputSearch from "./components/Heading/InputSearch";
 import Main from "./components/Main";
 import Footing from "./components/Footing";
-import { StyledH1 } from "./globalStyles";
-
-console.clear();
+import Title from "./components/Heading/Title";
 
 export const ImageContext = createContext();
 
@@ -30,7 +28,7 @@ function App() {
   return (
     <ImageContext.Provider value={value}>
       <Heading>
-        <StyledH1>Find your image</StyledH1>
+        <Title>Find your image</Title>
         <InputSearch />
       </Heading>
       <Main>
