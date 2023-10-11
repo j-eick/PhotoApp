@@ -47,7 +47,5 @@ const PageContainer = styled.div`
   min-height: 100vh;
   position: relative;
 
-  /* margin-top: 20vh; */
-
-  background-color: pink;
+  background-color: #4778a5;
 `;

@@ -7,8 +7,14 @@ const Footing = () => {
   return (
     <Footer>
       <FooterContainer>
-        <PiCopyright />
-        <p>{year}</p>
+        <StyledUL>
+          <li>
+            <PiCopyright />
+          </li>
+          <li>
+            <p>{year}</p>
+          </li>
+        </StyledUL>
       </FooterContainer>
     </Footer>
   );
@@ -16,7 +22,7 @@ const Footing = () => {
 
 export default Footing;
 
-export const Footer = styled.footer`
+const Footer = styled.footer`
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -31,11 +37,13 @@ export const Footer = styled.footer`
 
   background-color: #41729f;
 `;
-
-export const FooterContainer = styled.div`
+const FooterContainer = styled.div`
   position: relative;
   display: flex;
   gap: 5px;
 
   padding: 1.5rem;
+`;
+const StyledUL = styled.ul`
+  display: flex;
 `;
