@@ -1,8 +1,9 @@
 import { css } from "styled-components";
 
 const device = {
+  err: "319px",
   xs: "320px",
-  sm: "600px",
+  sm: "768px",
   md: "900px",
   lg: "1280px",
   xl: "1440px",
@@ -10,6 +11,11 @@ const device = {
 };
 
 const media = {
+  err: (...args) => css`
+    @media (max-width: ${device.err}) {
+      ${css(...args)};
+    }
+  `,
   xs: (...args) => css`
     @media (min-width: ${device.xs}) {
       ${css(...args)};

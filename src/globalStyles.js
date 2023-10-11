@@ -87,20 +87,4 @@ export const Styled_CloseModal_Button = styled.button`
   }
 `;
 
-/*********************************************************
- * LISTS
- */
-export const StyledImg = styled.img`
-  height: 10rem;
-  width: 15rem;
-  border-radius: 15px;
-  object-fit: cover;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  border: 0.75px solid white;
-
-  &:hover {
-    cursor: pointer;
-  }
-`;
-
 export default GlobalStyle;

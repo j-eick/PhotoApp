@@ -58,20 +58,22 @@ const ImageList = () => {
 export default ImageList;
 
 export const StyledUL = styled.ul`
-  height: 100%;
+  min-height: 100%;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   justify-content: space-evenly;
   gap: 20px;
 
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding: 40px 20px;
 
   margin-top: 20vh;
   margin-bottom: 7vh;
 
   overflow-y: scroll;
+
+  @media (min-width: 500px) {
+  }
 `;
 export const StyledLI = styled.li`
   display: grid;

@@ -44,7 +44,7 @@ function App() {
 export default App;
 
 const PageContainer = styled.div`
-  min-height: 100%;
+  min-height: 100vh;
   position: relative;
 
   /* margin-top: 20vh; */
