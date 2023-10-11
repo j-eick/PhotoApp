@@ -10,6 +10,7 @@ const GlobalStyle = createGlobalStyle`
 
   /* min-with 320px */
   --fontsize_PageTitle320px: clamp(1.5rem, 6.5vw, 2.25rem );
+  --fontsize_smallFontw320px: clamp(0.75rem, 2.5vw, 1rem );
 
   /* min-with 600px */
   --fontsize_PageTitle600px: 2rem;
@@ -35,36 +36,17 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     min-height: 100vh;
+    background-color: black;
+  }
+
+  p {
+    font-size: var(--fontsize_smallFontw320px);
   }
 `;
 
 /*********************************************************
  * HEADING, MAIN, Footer
  */
-
-export const StyledMain = styled.main`
-  padding: 20px;
-  margin: 2px 0;
-
-  background-color: #3677b3;
-`;
-export const Footer = styled.footer`
-  height: calc(100% - 73vh - 20vh);
-
-  display: flex;
-  flex-direction: column;
-  align-items: end;
-  justify-content: center;
-
-  background-color: #41729f;
-`;
-
-export const Footer_Container = styled.div`
-  padding: 2rem;
-
-  display: flex;
-  gap: 5px;
-`;
 
 /*********************************************************
  * MODALS, BACKDROP
@@ -108,23 +90,6 @@ export const Styled_CloseModal_Button = styled.button`
 /*********************************************************
  * LISTS
  */
-export const StyledUL = styled.ul`
-  height: 100%;
-
-  /* width: 80vw; */
-
-  position: relative;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  gap: 20px;
-`;
-export const StyledLI = styled.li`
-  display: grid;
-  place-items: center;
-  flex-grow: 1;
-`;
 export const StyledImg = styled.img`
   height: 10rem;
   width: 15rem;

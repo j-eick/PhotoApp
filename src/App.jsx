@@ -1,9 +1,9 @@
 import { createContext } from "react";
+import styled from "styled-components";
 import Heading from "./components/Heading/Heading";
 import useFetchPhotos from "./hooks/useFetchPhotos";
 import ImageList from "./components/ImageList";
 import InputSearch from "./components/Heading/InputSearch";
-import Main from "./components/Main";
 import Footing from "./components/Footing";
 import Title from "./components/Heading/Title";
 
@@ -27,16 +27,27 @@ function App() {
 
   return (
     <ImageContext.Provider value={value}>
-      <Heading>
-        <Title>Find your image</Title>
-        <InputSearch />
-      </Heading>
-      <Main>
+      <PageContainer>
+        <Heading>
+          <Title>Find your image</Title>
+          <InputSearch />
+        </Heading>
+
         <ImageList />
-      </Main>
-      <Footing />
+
+        <Footing />
+      </PageContainer>
     </ImageContext.Provider>
   );
 }
 
 export default App;
+
+const PageContainer = styled.div`
+  min-height: 100%;
+  position: relative;
+
+  /* margin-top: 20vh; */
+
+  background-color: pink;
+`;
