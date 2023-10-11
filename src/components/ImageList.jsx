@@ -1,4 +1,4 @@
-import { StyledUL, StyledLI } from "../globalStyles";
+import styled from "styled-components";
 import { useState, useContext, createContext } from "react";
 import { ImageContext } from "../App";
 import Image from "./Image";
@@ -56,3 +56,27 @@ const ImageList = () => {
 };
 
 export default ImageList;
+
+export const StyledUL = styled.ul`
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 20px;
+
+  padding: 40px 20px;
+
+  margin-top: 20vh;
+  margin-bottom: 7vh;
+
+  overflow-y: scroll;
+
+  @media (min-width: 500px) {
+  }
+`;
+export const StyledLI = styled.li`
+  display: grid;
+  place-items: center;
+  flex-grow: 1;
+`;

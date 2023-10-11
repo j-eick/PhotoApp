@@ -1,13 +1,11 @@
 import { createContext } from "react";
-import { Heading } from "./globalStyles";
+import styled from "styled-components";
+import Heading from "./components/Heading/Heading";
 import useFetchPhotos from "./hooks/useFetchPhotos";
 import ImageList from "./components/ImageList";
-import InputSearch from "./components/InputSearch";
-import Main from "./components/Main";
+import InputSearch from "./components/Heading/InputSearch";
 import Footing from "./components/Footing";
-import { StyledH1 } from "./globalStyles";
-
-console.clear();
+import Title from "./components/Heading/Title";
 
 export const ImageContext = createContext();
 
@@ -29,16 +27,25 @@ function App() {
 
   return (
     <ImageContext.Provider value={value}>
-      <Heading>
-        <StyledH1>Find your image</StyledH1>
-        <InputSearch />
-      </Heading>
-      <Main>
+      <PageContainer>
+        <Heading>
+          <Title>Find your image</Title>
+          <InputSearch />
+        </Heading>
+
         <ImageList />
-      </Main>
-      <Footing />
+
+        <Footing />
+      </PageContainer>
     </ImageContext.Provider>
   );
 }
 
 export default App;
+
+const PageContainer = styled.div`
+  min-height: 100vh;
+  position: relative;
+
+  background-color: #4778a5;
+`;
