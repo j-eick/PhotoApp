@@ -6,16 +6,14 @@ const Footing = () => {
 
   return (
     <Footer>
-      <FooterContainer>
-        <StyledUL>
-          <li>
-            <PiCopyright />
-          </li>
-          <li>
-            <p>{year}</p>
-          </li>
-        </StyledUL>
-      </FooterContainer>
+      <StyledUL>
+        <li>
+          <PiCopyright />
+        </li>
+        <li>
+          <p>{year}</p>
+        </li>
+      </StyledUL>
     </Footer>
   );
 };
@@ -30,6 +28,8 @@ const Footer = styled.footer`
 
   border-top: 2px solid white;
 
+  /* opacity: 0.4; */
+
   display: flex;
   flex-direction: column;
   align-items: end;
@@ -37,13 +37,8 @@ const Footer = styled.footer`
 
   background-color: #41729f;
 `;
-const FooterContainer = styled.div`
-  position: relative;
-  display: flex;
-  gap: 5px;
-
-  padding: 1.5rem;
-`;
 const StyledUL = styled.ul`
   display: flex;
+
+  padding-right: 2rem;
 `;

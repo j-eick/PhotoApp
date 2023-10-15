@@ -1,7 +1,8 @@
 import { createContext } from "react";
 import styled from "styled-components";
-import Heading from "./components/Heading/Heading";
 import useFetchPhotos from "./hooks/useFetchPhotos";
+
+import Heading from "./components/Heading/Heading";
 import ImageList from "./components/ImageList";
 import InputSearch from "./components/Heading/InputSearch";
 import Footing from "./components/Footing";
@@ -15,8 +16,6 @@ function App() {
       import.meta.env.VITE_Unsplash_ACCESS_KEY
     }`
   );
-
-  console.log(response);
 
   const value = {
     response,
@@ -47,5 +46,5 @@ const PageContainer = styled.div`
   min-height: 100vh;
   position: relative;
 
-  background-color: #4778a5;
+  background-color: #7097bb;
 `;
