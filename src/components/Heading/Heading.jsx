@@ -16,6 +16,8 @@ export const StyledHeader = styled.header`
   place-items: center;
   border-bottom: 2px solid white;
 
+  /* opacity: 0.4; */
+
   background-color: #274472;
 
   /* Breaking Point: max-width 319px */

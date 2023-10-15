@@ -35,8 +35,9 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    min-height: 100vh;
-    background-color: black;
+    /* min-height: 100vh; */
+    /* background-color: black; */
+    background-color: #7296b8;
   }
 
   p {

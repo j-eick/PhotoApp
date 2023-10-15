@@ -4,7 +4,7 @@ const device = {
   err: "319px",
   xs: "320px",
   sm: "768px",
-  md: "900px",
+  md: "1024px",
   lg: "1280px",
   xl: "1440px",
   xxl: "1920px",

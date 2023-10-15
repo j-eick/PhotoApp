@@ -124,9 +124,8 @@ export const SearchButton = styled.button`
   } */
 
   ${media.xs`
-  width: 17%;
-  height: 2.5em;
+    height: 2.5em;
 
-  width: clamp(10vw, 15vw, 100px);
+    width: clamp(10vw, 15vw, 100px);
   `}
 `;
