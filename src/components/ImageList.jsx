@@ -27,13 +27,7 @@ const ImageList = () => {
     }
   };
 
-  // const value = {
-  //   isModalOpen,
-  //   setIsModalOpen,
-  // };
-
   return (
-    // <PreviewModalContext.Provider value={value}>
     <>
       {/* {isModalOpen && (
         <PreviewModal
@@ -51,7 +45,6 @@ const ImageList = () => {
         ))}
       </StyledUL>
     </>
-    // </PreviewModalContext.Provider>
   );
 };
 
