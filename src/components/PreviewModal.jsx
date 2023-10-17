@@ -22,6 +22,8 @@ const StyledModalContainer = styled.div`
   padding: 10px;
   /* height: 100vh; */
   width: 100%;
+  height: calc(100vh-20vh-7vh);
+  z-index: 100;
 
   display: grid;
   place-items: center;

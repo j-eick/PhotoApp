@@ -9,38 +9,17 @@ console.clear();
 
 export const PreviewModalContext = createContext();
 
-const ImageList = () => {
+const ImageList = ({ onCLick }) => {
   const { response, isLoading } = useContext(ImageContext);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [clickedPic, setClickedPic] = useState("");
 
-  const handleImageClick = (clickEvent) => {
-    try {
-      setIsModalOpen(true);
-      // find clicked Photo
-      const clickedPic = response.find(
-        (target) => target.alt_description === clickEvent.target?.alt
-      );
-      setClickedPic(clickedPic);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
   return (
     <>
-      {/* {isModalOpen && (
-        <PreviewModal
-          onClick={() => setIsModalOpen(false)}
-          clickedPic={clickedPic}
-        >
-          <CloseModal_Button onClick={() => setIsModalOpen(false)} />
-        </PreviewModal>
-      )} */}
       <StyledUL>
         {response.map((data, id) => (
           <StyledLI key={id}>
-            <Image data={data} onClick={handleImageClick} />
+            <Image data={data} onClick={onCLick} />
           </StyledLI>
         ))}
       </StyledUL>

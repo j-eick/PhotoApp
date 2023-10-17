@@ -9,6 +9,7 @@ import Footing from "./components/Footing";
 import Title from "./components/Heading/Title";
 import PreviewModal from "./components/PreviewModal";
 import CloseModal_Button from "./components/Buttons/CloseModal_Button";
+import { findPictureinArray } from "./utils/func";
 
 export const ImageContext = createContext();
 
@@ -22,23 +23,51 @@ function App() {
     }`
   );
 
+  const handleImageClick = (clickEvent) => {
+    try {
+      setIsModalOpen(true);
+      // find clicked Photo
+      // const clickedPicture = response.find(
+      //   (target) => target.alt_description === clickEvent.target?.alt
+      // );
+      const clickedPicture = findPictureinArray(
+        clickedPic,
+        response,
+        clickEvent
+      );
+      setClickedPic(clickedPicture);
+      console.log(clickedPic);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   const value = {
     response,
     isLoading,
     isError,
     fetchData,
   };
-  console.log(isModalOpen);
 
   return (
     <ImageContext.Provider value={value}>
       <PageContainer>
+        {/* =====  PHOTO-MODAL  ===== */}
+        {isModalOpen && (
+          <PreviewModal
+            onClick={() => setIsModalOpen(false)}
+            clickedPic={clickedPic}
+          >
+            <CloseModal_Button onClick={() => setIsModalOpen(false)} />
+          </PreviewModal>
+        )}
+        {/* =====  PHOTO-MODAL  ===== */}
         <Heading>
           <Title>Find your image</Title>
           <InputSearch />
         </Heading>
 
-        <ImageList />
+        <ImageList onCLick={handleImageClick} />
 
         <Footing />
       </PageContainer>

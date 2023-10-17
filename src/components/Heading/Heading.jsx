@@ -11,6 +11,7 @@ export const StyledHeader = styled.header`
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 50;
 
   display: grid;
   place-items: center;
