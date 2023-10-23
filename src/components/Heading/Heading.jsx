@@ -11,6 +11,7 @@ export const StyledHeader = styled.header`
   position: fixed;
   top: 0;
   width: 100%;
+  height: 20vh;
   z-index: 50;
 
   display: grid;
@@ -20,21 +21,4 @@ export const StyledHeader = styled.header`
   /* opacity: 0.4; */
 
   background-color: #274472;
-
-  /* Breaking Point: max-width 319px */
-  ${media.err`
-  height: 20vh;
-  `}
-
-  /* Breaking Point: min-width 320px */
-  ${media.xs`
-  height: 20vh;
-`}
-
-  /* Breaking Point: min-width 768px */
-  ${media.sm`
-  height: 20vh;
-  
-  /* font-size: var(--fontsize_PageTitle600px); */
-`}
 `;

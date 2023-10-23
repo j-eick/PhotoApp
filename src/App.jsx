@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import { findPictureinArray } from "./utils/func";
 import styled from "styled-components";
 import useFetchPhotos from "./hooks/useFetchPhotos";
 
@@ -9,7 +10,7 @@ import Footing from "./components/Footing";
 import Title from "./components/Heading/Title";
 import PreviewModal from "./components/PreviewModal";
 import CloseModal_Button from "./components/Buttons/CloseModal_Button";
-import { findPictureinArray } from "./utils/func";
+import { FocusOn } from "react-focus-on";
 
 export const ImageContext = createContext();
 
@@ -52,21 +53,22 @@ function App() {
   return (
     <ImageContext.Provider value={value}>
       <PageContainer>
-        {/* =====  PHOTO-MODAL  ===== */}
-        {isModalOpen && (
-          <PreviewModal
-            onClick={() => setIsModalOpen(false)}
-            clickedPic={clickedPic}
-          >
-            <CloseModal_Button onClick={() => setIsModalOpen(false)} />
-          </PreviewModal>
-        )}
-        {/* =====  PHOTO-MODAL  ===== */}
         <Heading>
           <Title>Find your image</Title>
           <InputSearch />
         </Heading>
-
+        {/* =====  PHOTO-MODAL  ===== */}
+        {isModalOpen && (
+          <FocusOn>
+            <PreviewModal
+              onClick={() => setIsModalOpen(false)}
+              clickedPic={clickedPic}
+            >
+              <CloseModal_Button onClick={() => setIsModalOpen(false)} />
+            </PreviewModal>
+          </FocusOn>
+        )}
+        {/* =====  PHOTO-MODAL  ===== */}
         <ImageList onCLick={handleImageClick} />
 
         <Footing />

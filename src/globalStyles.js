@@ -11,10 +11,11 @@ const GlobalStyle = createGlobalStyle`
   /* min-with 320px */
   --fontsize_PageTitle320px: clamp(1.5rem, 6.5vw, 2.25rem );
   --fontsize_smallFontw320px: clamp(0.75rem, 2.5vw, 1rem );
+  --fontsize_CloseButton_PreviewModal: 1.75rem;
 
   /* min-with 600px */
   --fontsize_PageTitle600px: 2rem;
-  --fontsize_CloseButton_PreviewModal: 1.75rem;
+  --fontsize_CloseButton_PreviewModal: 1.5rem;
 
   /* FONTS */
   --font_quicksand300: 300;
@@ -46,46 +47,21 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 /*********************************************************
- * HEADING, MAIN, Footer
- */
-
-/*********************************************************
  * MODALS, BACKDROP
  */
-export const StyledModal = styled.div`
-  position: absolute;
-  top: 120px;
-`;
-export const ModalBackdrop = styled.div`
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  background: rgba(240, 240, 240, 0.744);
-  backdrop-filter: blur(10px);
+// export const StyledModal = styled.div`
+//   position: absolute;
+//   top: 120px;
+// `;
+// export const ModalBackdrop = styled.div`
+//   position: absolute;
+//   top: 0px;
+//   left: 0px;
+//   background: rgba(240, 240, 240, 0.744);
+//   backdrop-filter: blur(10px);
 
-  height: 100%;
-  width: 100vw;
-`;
-
-/*********************************************************
- * INPUTs, BUTTONS
- */
-
-export const Styled_CloseModal_Button = styled.button`
-  position: absolute;
-  top: 50px;
-  right: 50px;
-
-  border: none;
-  background: none;
-
-  padding: 5px 20px;
-
-  font-size: var(--fontsize_CloseButton_PreviewModal);
-
-  &:hover {
-    cursor: pointer;
-  }
-`;
+//   height: 100%;
+//   width: 100vw;
+// `;
 
 export default GlobalStyle;

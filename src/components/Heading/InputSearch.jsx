@@ -88,13 +88,10 @@ export const StyledInput = styled.input`
   /* SCREEN-SIZE__XS__min320px */
   ${media.xs`
   width: clamp(20vw, 30vw, 200px);
-
-  padding-left: 10px;
-
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 0px;
+  `}
+  /* SCREEN-SIZE__XL__min1440px */
+  ${media.md`
+  width: clamp(20vw, 30vw, 200px);
   `}
 `;
 
@@ -124,6 +121,11 @@ export const SearchButton = styled.button`
   } */
 
   ${media.xs`
+    height: 2.5em;
+
+    width: clamp(10vw, 15vw, 100px);
+  `}
+  ${media.md`
     height: 2.5em;
 
     width: clamp(10vw, 15vw, 100px);
