@@ -1,9 +1,7 @@
 import styled from "styled-components";
-import { useState, useContext, createContext } from "react";
+import { useContext, createContext } from "react";
 import { ImageContext } from "../App";
 import Image from "./Image";
-import PreviewModal from "./PreviewModal";
-import CloseModal_Button from "./Buttons/CloseModal_Button";
 
 console.clear();
 
@@ -11,8 +9,6 @@ export const PreviewModalContext = createContext();
 
 const ImageList = ({ onCLick }) => {
   const { response, isLoading } = useContext(ImageContext);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [clickedPic, setClickedPic] = useState("");
 
   return (
     <>
