@@ -11,12 +11,14 @@ import Title from "./components/Heading/Title";
 import PreviewModal from "./components/PreviewModal";
 import CloseModal_Button from "./components/Buttons/CloseModal_Button";
 import { FocusOn } from "react-focus-on";
+import CurrentSearchQuery from "./components/List/CurrentSearchQuery";
 
 export const ImageContext = createContext();
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [clickedPic, setClickedPic] = useState("");
+  const [currentSearchQuery, setCurrentSearchQuery] = useState("");
 
   const { response, isLoading, isError, fetchData } = useFetchPhotos(
     `search/photos?page=1&query=office&client_id=${
@@ -56,6 +58,7 @@ function App() {
         <Heading>
           <Title>Find your image</Title>
           <InputSearch />
+          <CurrentSearchQuery />
         </Heading>
         {/* =====  PHOTO-MODAL  ===== */}
         {isModalOpen && (
