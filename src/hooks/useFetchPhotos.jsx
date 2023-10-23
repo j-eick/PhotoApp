@@ -1,11 +1,15 @@
 import { useState, useEffect } from "react";
-import usePhotoStore from "./usePhotoStore";
 import axios from "axios";
+import useGlobal from "./useStore";
 
 const useFetchPhotos = (param) => {
   const [response, setResponse] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState("");
+  const addPhotosToGlobalstore = useGlobal(
+    (state) => state.addPhotosToGlobalstore
+  );
+  const storedPhotos = useGlobal((state) => state.storedPhotos);
 
   // USE-STORE HOOKS
   // const fetchPhotos = usePhotoStore((state) => state.fetchPhotos);
@@ -18,7 +22,8 @@ const useFetchPhotos = (param) => {
       setIsLoading(true);
       const res = await axios(url);
       setResponse(res.data.results);
-      console.log(res.data.results);
+      addPhotosToGlobalstore(res.data.results);
+      // console.log(res.data.results);
     } catch (err) {
       setIsError(err);
     } finally {

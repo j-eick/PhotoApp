@@ -18,7 +18,6 @@ export const ImageContext = createContext();
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [clickedPic, setClickedPic] = useState("");
-  const [currentSearchQuery, setCurrentSearchQuery] = useState("");
 
   const { response, isLoading, isError, fetchData } = useFetchPhotos(
     `search/photos?page=1&query=office&client_id=${
