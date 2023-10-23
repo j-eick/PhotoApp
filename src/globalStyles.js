@@ -27,7 +27,8 @@ const GlobalStyle = createGlobalStyle`
       box-sizing: border-box;
       padding: 0%;
       margin: 0;
-      font-family: 'Montserrat', sans-serif;
+      /* font-family: 'Montserrat ', sans-serif; */
+      font-family: "Montserrat Variable";
       list-style: none;
   }
 

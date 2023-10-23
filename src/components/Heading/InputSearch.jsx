@@ -1,13 +1,13 @@
-import { ImageContext } from "../../App";
-import { useContext, useState } from "react";
 import styled from "styled-components";
 import media from "../../breakpoints";
+import { ImageContext } from "../../App";
+import { useContext, useState } from "react";
+import useGlobal from "../../hooks/useStore";
 
 const InputSearch = () => {
   const [searchValue, setSearchValue] = useState("");
   const { fetchData } = useContext(ImageContext);
-
-  console.log(searchValue);
+  const addToSearchQuery = useGlobal((state) => state.addToSearchQuery);
 
   const handleButtonSearch = () => {
     fetchData(
@@ -15,6 +15,7 @@ const InputSearch = () => {
         import.meta.env.VITE_Unsplash_ACCESS_KEY
       }`
     );
+    addToSearchQuery(String(searchValue));
     setSearchValue("");
   };
 
@@ -25,6 +26,7 @@ const InputSearch = () => {
           import.meta.env.VITE_Unsplash_ACCESS_KEY
         }`
       );
+      addToSearchQuery(String(searchValue));
       setSearchValue("");
     }
   };
@@ -54,11 +56,9 @@ export default InputSearch;
 
 const StyledWrapper = styled.div`
   width: 100%;
-  height: 100%;
 
   display: flex;
   justify-content: center;
-  align-items: center;
 `;
 
 /**

@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import media from "../../breakpoints";
 
 const Heading = ({ children }) => {
   return <StyledHeader>{children}</StyledHeader>;
