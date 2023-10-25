@@ -1,6 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
-import { useEffect } from "react";
 
 const useFetchPhotos = (param) => {
   const [response, setResponse] = useState([]);
