@@ -1,13 +1,19 @@
 import styled from "styled-components";
 import media from "../../breakpoints";
 import { ImageContext } from "../../App";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import useGlobal from "../../hooks/useStore";
 
 const InputSearch = () => {
   const [searchValue, setSearchValue] = useState("");
-  const { fetchData } = useContext(ImageContext);
-  const addToSearchQuery = useGlobal((state) => state.addToSearchQuery);
+  const { response, fetchData } = useContext(ImageContext);
+  const addToSearchQueries = useGlobal((state) => state.addToSearchQueries);
+  const addPhotosToGlobalstore = useGlobal(
+    (state) => state.addPhotosToGlobalstore
+  );
+  const storedPhotos = useGlobal((state) => state.storedPhotos);
+
+  console.log(response);
 
   const handleButtonSearch = () => {
     fetchData(
@@ -15,7 +21,8 @@ const InputSearch = () => {
         import.meta.env.VITE_Unsplash_ACCESS_KEY
       }`
     );
-    addToSearchQuery(String(searchValue));
+    addToSearchQueries(String(searchValue));
+    console.log(storedPhotos);
     setSearchValue("");
   };
 
@@ -26,10 +33,15 @@ const InputSearch = () => {
           import.meta.env.VITE_Unsplash_ACCESS_KEY
         }`
       );
-      addToSearchQuery(String(searchValue));
+      addToSearchQueries(String(searchValue));
+      console.log(storedPhotos);
       setSearchValue("");
     }
   };
+
+  useEffect(() => {
+    addPhotosToGlobalstore(response);
+  }, []);
 
   return (
     <StyledWrapper>

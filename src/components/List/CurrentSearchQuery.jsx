@@ -7,7 +7,7 @@ const CurrentSearchQuery = () => {
   const allSearchQueries = useGlobal((state) => state.allSearchQueries);
   const storedPhotos = useGlobal((state) => state.storedPhotos);
 
-  console.log(storedPhotos);
+  // console.log(storedPhotos);
 
   return (
     <Styled_CurrentSearchQuery_List>
@@ -37,7 +37,7 @@ const StyledUL = styled.ul`
   gap: 10px;
 `;
 const StyledLI = styled.li`
-  padding: 3px 7px;
+  padding: 2px 7px;
 
   border-radius: 5px;
 
@@ -52,6 +52,6 @@ const StyledLI = styled.li`
 const StyledP = styled.p`
   padding-bottom: 5px;
 
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #3f8ed7;
 `;
