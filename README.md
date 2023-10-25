@@ -2,26 +2,28 @@
 
 This app is a work in progress to showcase usage of the unsplash api.
 
-### 0. TechStack
+![](public/screen1.png)
+
+#### 1. TechStack
 
 - Vite React
 - Zustand
 - Axios
 
-### 1. Getting started
+#### 2. Getting started
 
 Clone the repo and start the server via `npm run dev`.
 
 As soon as this project is deployed to vercel, a link to the live demo can be found in the top right.
 
-### 2. Usage
+#### 3. Usage
 
 Upon starting things up, users can enter terms of their liking and thereby make their photo request.
 After entering their first search term, a continuous list of all entered search terms is displayed.
 
-### 3. Most crucial parts
+#### 3. Most crucial parts
 
-##### 1. Fetching from unsplash api
+##### 3.1 Fetching from unsplash api
 
 ```javascript
 const useFetchPhotos = (param) => {
@@ -56,7 +58,7 @@ const useFetchPhotos = (param) => {
 };
 ```
 
-##### 2. Making fetched photos and search queries globally availabe
+##### 3.2 Making fetched photos and search queries globally availabe
 
 ```javascript
 const useGlobal = create((set) => {
@@ -81,7 +83,3 @@ const useGlobal = create((set) => {
 });
 ´´´
 ```
-
-### 4. Screenshot
-
-![](public/screen1.png)
