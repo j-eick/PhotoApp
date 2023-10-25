@@ -4,18 +4,18 @@ const useGlobal = create((set) => {
   return {
     storedPhotos: [],
     allSearchQueries: [],
-    clickedPicInStore: [],
+    // clickedPicInStore: [],
 
     isModalOpen: false,
 
-    addToSearchQuery(newQuery) {
+    addToSearchQueries(newQuery) {
       set((state) => {
         return { allSearchQueries: [...state.allSearchQueries, newQuery] };
       });
     },
     addPhotosToGlobalstore(fetchedPics) {
-      set(() => {
-        return { storedPhotos: fetchedPics };
+      set((state) => {
+        return { storedPhotos: [...state.storedPhotos, fetchedPics] };
       });
     },
   };

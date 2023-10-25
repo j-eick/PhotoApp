@@ -1,19 +1,19 @@
-import { create } from "zustand";
+// import { create } from "zustand";
 
-const usePhotoStore = create((set) => ({
-  allPhotos: [],
-  clickedPicInStore: [],
+// const usePhotoStore = create((set) => ({
+//   allPhotos: [],
+//   clickedPicInStore: [],
 
-  isModalOpen: false,
+//   isModalOpen: false,
 
-  fetchPhotos: (newPhotos) =>
-    set((state) => ({ allPhotos: [...state.allPhotos, newPhotos] })),
+//   fetchPhotos: (newPhotos) =>
+//     set((state) => ({ allPhotos: [...state.allPhotos, newPhotos] })),
 
-  handleClickedPic: (clickedPic) =>
-    set(() => ({ clickedPicInStore: clickedPic })),
+//   handleClickedPic: (clickedPic) =>
+//     set(() => ({ clickedPicInStore: clickedPic })),
 
-  openModal: () => set((state) => ({ isModalOpen: !state.isModalOpen })),
-  closeModal: () => set((state) => ({ isModalOpen: state.isModalOpen })),
-}));
+//   openModal: () => set((state) => ({ isModalOpen: !state.isModalOpen })),
+//   closeModal: () => set((state) => ({ isModalOpen: state.isModalOpen })),
+// }));
 
-export default usePhotoStore;
+// export default usePhotoStore;
